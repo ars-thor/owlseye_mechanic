@@ -8,7 +8,10 @@ class AddBankAccount extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(title: Text('Add Bank Details')),
-            body: Center(child: ListSearch())));
+            body: Center(
+                child: Container(
+                    height: 100,
+                    child: SingleChildScrollView(child: ListSearch())))));
   }
 }
 

@@ -126,4 +126,42 @@ class AuthApi {
       return 0;
     }
   }
+
+  //for addmechanic or add employee
+
+  Future<int> add_shopBanking(
+    String shop_reg,
+    String account_no,
+    String bank_name,
+    String bank_branch,
+    String IFSC,
+    String RTGS,
+    String account_type,
+    String account_holder_name,
+  ) async {
+    final String apiUrl = "https://owlseyes.herokuapp.com/auth/add_shopBanking";
+
+    final response = await http.put(Uri.parse(apiUrl),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, String>{
+          "shop_reg": shop_reg,
+          "account_no": account_no,
+          "bank_name": bank_name,
+          "bank_branch": bank_branch,
+          "IFSC": IFSC,
+          "RTGS": RTGS,
+          "account_type": account_type,
+          "account_holder_name": account_holder_name
+        }));
+
+    print(response.body);
+
+    if (response.statusCode == 201) {
+      return response.statusCode;
+    } else {
+      return 0;
+    }
+  }
 }

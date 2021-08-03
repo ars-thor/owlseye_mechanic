@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:owlseye_mechanic/mechanics/Dashboard_part/component/horizontal_scroll_ui.dart';
 
 class MechanicsDashboard extends StatelessWidget {
   @override
@@ -10,9 +11,7 @@ class MechanicsDashboard extends StatelessWidget {
         backgroundColor: Color(0xff29cccc),
       ),
       drawer: NavDrawer(),
-      body: Center(
-        child: Text('Our Services In Side Menu'),
-      ),
+      body: Dashboardcard(),
     );
   }
 }
